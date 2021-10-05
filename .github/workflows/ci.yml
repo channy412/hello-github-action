@@ -6,7 +6,7 @@ on: [push]
 
 jobs:
   build_and_save:
-    runs-on: ubuntu-20.04 #[self-hosted, linux]       #ubuntu-20.04     # ubuntu-latest  is same with  # ubuntu-20.04   
+    runs-on: [self-hosted, linux]       #ubuntu-20.04     # ubuntu-latest  is same with  # ubuntu-20.04   
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -14,9 +14,13 @@ jobs:
         run: |
           python write_file.py
 
-      - name: upload artifacts
+      - name: upload artifacts via github action
         uses: actions/upload-artifact@v2
         with:
           name: demo-folder
           path: |
             demofolder
+
+
+      # - name: upload artifacts to designated place on server
+      #   run: upload-artifacts.sh
