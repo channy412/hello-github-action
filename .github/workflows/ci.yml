@@ -22,5 +22,5 @@ jobs:
             demofolder
 
 
-      # - name: upload artifacts to designated place on server
-      #   run: upload-artifacts.sh
+      - name: upload artifacts to designated place on server
+        run: upload-artifacts.sh
