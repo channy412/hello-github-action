@@ -1,0 +1,22 @@
+name: build and upload file
+
+# possible way -> take argument asking whether you want to compile rust or not 
+
+on: [push]
+
+jobs:
+  build_and_save:
+    runs-on: ubuntu-20.04 #[self-hosted, linux]       #ubuntu-20.04     # ubuntu-latest  is same with  # ubuntu-20.04   
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: build dist
+        run: |
+          python write_file.py
+
+      - name: upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist-without-markdown
+          path: |
+            demofile.txt
