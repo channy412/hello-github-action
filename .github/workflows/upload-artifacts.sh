@@ -1,7 +1,4 @@
-#!/bin/bash
-
-
-
+#!/bin/sh
 cp -r demofolder ../artifacts
 rm -r ../artifacts/latest/demofolder
 cp -r demofolder ../artifacts/latest
