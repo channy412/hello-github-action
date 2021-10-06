@@ -23,4 +23,4 @@ jobs:
 
 
       - name: upload artifacts to designated place on server
-        run: upload-artifacts.sh
+        run: bash upload-artifacts.sh
