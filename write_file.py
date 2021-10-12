@@ -5,3 +5,6 @@ os.mkdir(directory)
 f = open("./demofolder/demofile.txt", "a")
 f.writelines(["\nSee you soon!", "\nOver and out."])
 f.close()
+
+
+    # make trivial change

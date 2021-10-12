@@ -1,11 +1,9 @@
-name: build and upload file
-
-# possible way -> take argument asking whether you want to compile rust or not 
+name: run_ci_test
 
 on: [push]
 
 jobs:
-  build_and_save:
+  run_ci_test:
     runs-on: [self-hosted, linux]       
     steps:
       - name: Checkout repository
