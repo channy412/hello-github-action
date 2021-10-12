@@ -1,6 +1,6 @@
 name: run_ci_test
 
-on: [push]
+on: [push, pull_request]      # on: [push]
 
 jobs:
   run_ci_test:
@@ -9,10 +9,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: running cargo test
-        working-directory: ./verify      # not will be used if we use a separate repo
+        working-directory: ./verify      # this line not will be used if we use a separate repo
         run: |
           ln -sf ~/local_bin/install ../install
-          ../install/bin/rustc --version
+          ../install/bin/rustc --version     # just checking if this is a right rustc
           RUSTC=../install/bin/rustc ../install/bin/cargo build
           DUST_Z3_PATH="/home/chanheec/local_bin/z3" RUSTC=../install/bin/rustc RUSTDOC=../install/bin/rustdoc  ../install/bin/cargo test
 
