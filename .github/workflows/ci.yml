@@ -16,7 +16,7 @@ jobs:
           ln -sf ~/local_bin/install ../install
           ../install/bin/rustc --version
           RUSTC=../install/bin/rustc ../install/bin/cargo build
-          RUSTC=../install/bin/rustc RUSTDOC=../install/bin/rustdoc  ../install/bin/cargo test
+          DUST_Z3_PATH="/home/chanheec/local_bin/z3" RUSTC=../install/bin/rustc RUSTDOC=../install/bin/rustdoc  ../install/bin/cargo test
 
 
 
