@@ -8,6 +8,6 @@ rustc = "../install/bin/rustc"
 
 
 [env]
-DUST_Z3_PATH="~/local_bin_z3" 
+DUST_Z3_PATH="~/local_bin/z3" 
 DYLD_LIBRARY_PATH="../install/lib/rustlib/x86_64-apple-darwin/lib" 
 LD_LIBRARY_PATH="../install/lib" 
