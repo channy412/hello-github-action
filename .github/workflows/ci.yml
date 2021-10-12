@@ -14,6 +14,7 @@ jobs:
         working-directory: ./verify      # not will be used if we use a separate repo
         run: |
           ln -sf ~/local_bin/install ../install
+          ../install/bin/rustc --version
           RUSTC=../install/bin/rustc ../install/bin/cargo build
           RUSTC=../install/bin/rustc RUSTDOC=../install/bin/rustdoc  ../install/bin/cargo test
 
