@@ -1,0 +1,18 @@
+[unstable]
+unstable-options = true
+
+[build]
+out-dir = "../install/bin"
+rustc = "../install/bin/rustc"
+
+
+
+[env]
+DUST_Z3_PATH="/Users/chanhee/Works/codes/z3/build/z3" 
+DYLD_LIBRARY_PATH="../../install/lib/rustlib/x86_64-apple-darwin/lib" 
+LD_LIBRARY_PATH="../../install/lib" 
+RUSTC = {value = "../install/bin/rustc" , force = true, relative = true  }
+# CARGO_BUILD_RUSTC = {value = "../install/bin/rustc" , force = true, relative = true  }
+# RUSTC_WORKSPACE_WRAPPER = {value = "../install/bin/rustc" , force = true, relative = true  }
+
+# rustc-env = {key = "value"}

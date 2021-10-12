@@ -6,21 +6,17 @@ on: [push]
 
 jobs:
   build_and_save:
-    runs-on: [self-hosted, linux]       #ubuntu-20.04     # ubuntu-latest  is same with  # ubuntu-20.04   
+    runs-on: [self-hosted, linux]       
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: build dist
+      - name: running cargo test
+        working-directory: ./verify      # not will be used if we use a separate repo
         run: |
-          python write_file.py
-
-      - name: upload artifacts via github action
-        uses: actions/upload-artifact@v2
-        with:
-          name: demo-folder
-          path: |
-            demofolder
+          ln -sf ~/local_bin/install ../install
+          RUSTC=../install/bin/rustc ../install/bin/cargo build
+          RUSTC=../install/bin/rustc RUSTDOC=../install/bin/rustdoc  ../install/bin/cargo test
 
 
-      - name: upload artifacts to designated place on server
-        run: bash upload-artifacts.sh
+
+
